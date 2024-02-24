@@ -53,7 +53,6 @@ ex = {
 class Certificate:
     id: str
     common_name: str
-    country: str
     crl: bool
     days_valid: int
     fingerprint: str
@@ -62,15 +61,16 @@ class Certificate:
     key_size: str
     key_type: str
     key_usage: str
-    locality: str
     name: str
     organization: str
-    state: str
     subject_alt_name: str
-    unit: str
     akid: str = None
+    country: str = None
+    locality: str = None
     private_key: bool = False
     skid: str = None
+    state: str = None
+    unit: str = None
 
     def __str__(self) -> str:
         return self.name
