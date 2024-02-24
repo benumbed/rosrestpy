@@ -4,7 +4,7 @@ from typing import Union
 
 @dataclass
 class Interface:
-    actual_mtu: int
+    # actual_mtu: int
     disabled: bool
     fp_rx_byte: int
     fp_rx_packet: int
@@ -25,6 +25,7 @@ class Interface:
     mac_address: str = None
     default_name: str = None
     max_l2mtu: int = None
+    actual_mtu: int = None
     rx_drop: int = None
     rx_error: int = None
     slave: bool = None
