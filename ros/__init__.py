@@ -1,4 +1,5 @@
 __version__ = "0.12.0"
+from .certificate import CertificateModule
 from .inteface import InterfaceModule
 from .ip import IPModule
 from .mpls import MPLSModule
@@ -29,4 +30,5 @@ __all__ = [
     "SystemModule",
     "ToolModule",
     "UserModule",
+    "CertificateModule",
 ]

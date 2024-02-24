@@ -17,6 +17,7 @@ from . import (
     SystemModule,
     ToolModule,
     UserModule,
+    CertificateModule
 )
 
 from . import Error, Log
@@ -184,6 +185,8 @@ class Ros(BaseRos):
     _system: SystemModule = None
     _tool: ToolModule = None
     _user: UserModule = None
+    _cert: CertificateModule = None
+    
     """
     Ros class that represent a routeros device.
 
@@ -197,6 +200,13 @@ class Ros(BaseRos):
     :param str filename: Base filename of the rest API, default to `rest`
     :param str url: The device's Rest API url with base filename, default to https://server/rest
     """
+
+    @property
+    def certificate(self):
+        """/certificate"""
+        if not self._cert:
+            self._cert = CertificateModule(self)
+        return self._cert
 
     @property
     def bridge(self) -> BridgeModule:
