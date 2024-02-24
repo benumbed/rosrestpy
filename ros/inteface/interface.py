@@ -15,12 +15,8 @@ class Interface:
     name: str
     running: bool
     rx_byte: int
-    rx_drop: int
-    rx_error: int
     rx_packet: int
     tx_byte: int
-    tx_drop: int
-    tx_error: int
     tx_packet: int
     tx_queue_drop: int
     type: str
@@ -29,7 +25,11 @@ class Interface:
     mac_address: str = None
     default_name: str = None
     max_l2mtu: int = None
+    rx_drop: int = None
+    rx_error: int = None
     slave: bool = None
+    tx_drop: int = None
+    tx_error: int = None
     id: str = None
 
     def __str__(self) -> str:
